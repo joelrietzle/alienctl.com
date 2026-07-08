@@ -1,0 +1,165 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>alienctl | AI-agent change control before code review</title>
+    <meta
+      name="description"
+      content="alienctl is a local/BYOC Run Control Receipt gate for observed AI-agent repo sessions before PR review."
+    >
+    <link rel="stylesheet" href="styles.css">
+  </head>
+  <body>
+    <header class="site-header" aria-label="Site">
+      <a class="brand" href="#top" aria-label="alienctl home">alienctl</a>
+      <nav class="nav" aria-label="Primary">
+        <a href="#rule">Rule</a>
+        <a href="#pilot">Pilot</a>
+        <a href="mailto:hello@alienctl.com">Contact</a>
+      </nav>
+    </header>
+
+    <main id="top">
+      <section class="hero" aria-labelledby="hero-title">
+        <div class="hero-copy">
+          <p class="eyebrow">AI-agent change control before code review</p>
+          <h1 id="hero-title">No valid Run Control Receipt, no AI-agent PR review.</h1>
+          <p class="hero-lede">
+            alienctl helps engineering teams observe local AI-agent repo sessions,
+            check them against local policy, and hand reviewers a decision-ready
+            evidence packet before review begins.
+          </p>
+          <div class="cta-row" aria-label="Primary actions">
+            <a class="button primary" href="mailto:hello@alienctl.com">Run a one-repo pilot</a>
+            <a class="button secondary" href="mailto:hello@alienctl.com">Ask about alienctl</a>
+          </div>
+        </div>
+
+        <aside class="receipt-panel" aria-label="Example reviewer packet">
+          <div class="receipt-topline">
+            <span>Run Control Receipt</span>
+            <strong>review blocked</strong>
+          </div>
+          <dl class="receipt-grid">
+            <div>
+              <dt>Session</dt>
+              <dd>observed local repo</dd>
+            </div>
+            <div>
+              <dt>Policy</dt>
+              <dd>local receipt gate</dd>
+            </div>
+            <div>
+              <dt>Verification</dt>
+              <dd>declared evidence required</dd>
+            </div>
+            <div>
+              <dt>Archive</dt>
+              <dd>receipt + decision packet</dd>
+            </div>
+          </dl>
+          <p class="receipt-note">
+            Code correctness proven: no. Reviewer action: open the packet before review.
+          </p>
+        </aside>
+      </section>
+
+      <section class="section" id="problem" aria-labelledby="problem-title">
+        <p class="section-kicker">Problem</p>
+        <h2 id="problem-title">AI-agent PRs arrive with too much uncertainty.</h2>
+        <p>
+          Reviewers are asked to judge code after the fact, often without a clear record of
+          what the agent changed, which commands ran, which evidence is missing, or whether
+          sensitive surfaces need approval before review starts.
+        </p>
+      </section>
+
+      <section class="section rule-band" id="rule" aria-labelledby="rule-title">
+        <p class="section-kicker">The Rule</p>
+        <h2 id="rule-title">No valid receipt, no AI-agent PR review.</h2>
+        <p>
+          alienctl turns the first decision into a local control point: may this AI-agent
+          change begin human review, or must it be fixed, verified, approved, or reconstructed
+          first?
+        </p>
+      </section>
+
+      <section class="section" id="how" aria-labelledby="how-title">
+        <p class="section-kicker">How It Works</p>
+        <h2 id="how-title">A local gate around the repo session.</h2>
+        <ol class="steps">
+          <li>Observe the AI-agent repo session locally.</li>
+          <li>Run local receipt-policy checks after the work stops.</li>
+          <li>Generate a reviewer-ready workflow decision.</li>
+          <li>Archive receipt evidence for later audit or incident reconstruction.</li>
+        </ol>
+      </section>
+
+      <section class="section answer-section" id="answers" aria-labelledby="answers-title">
+        <p class="section-kicker">What A Receipt Answers</p>
+        <h2 id="answers-title">Before review, the packet should answer the obvious questions.</h2>
+        <div class="answer-grid">
+          <article>
+            <h3>What changed?</h3>
+            <p>Observed files, session attribution, and baseline quality.</p>
+          </article>
+          <article>
+            <h3>What evidence exists?</h3>
+            <p>Declared verification, receipt status, policy context, and archive paths.</p>
+          </article>
+          <article>
+            <h3>What blocks review?</h3>
+            <p>Failed checks, missing evidence, sensitive-surface approval gaps, or unclear attribution.</p>
+          </article>
+          <article>
+            <h3>What is not proven?</h3>
+            <p>No claim of code correctness, production safety, compliance, or ROI.</p>
+          </article>
+        </div>
+      </section>
+
+      <section class="section trust-section" id="trust" aria-labelledby="trust-title">
+        <p class="section-kicker">Local/BYOC Trust Boundary</p>
+        <h2 id="trust-title">Bring your own repo, policy, commands, and archive.</h2>
+        <p>
+          The current pilot shape is local and buyer-controlled. alienctl does not need a
+          hosted dashboard, stored credentials, third-party analytics, or provider mutation
+          to validate the workflow decision.
+        </p>
+      </section>
+
+      <section class="section pilot-section" id="pilot" aria-labelledby="pilot-title">
+        <p class="section-kicker">Two-Week One-Repo Pilot</p>
+        <h2 id="pilot-title">Test the rule on one real AI-agent workflow.</h2>
+        <p>
+          A design-partner pilot names one repo, one owner, the verification commands,
+          sensitive surfaces, local archive path, and the reviewer decision rule. The goal is
+          to learn whether the receipt gate changes review behavior or reconstructability.
+        </p>
+      </section>
+
+      <section class="section nonclaims" id="non-claims" aria-labelledby="nonclaims-title">
+        <p class="section-kicker">Non-Claims</p>
+        <h2 id="nonclaims-title">The receipt is evidence, not a magic approval stamp.</h2>
+        <ul>
+          <li>alienctl does not prove code correctness.</li>
+          <li>alienctl does not prove production safety.</li>
+          <li>alienctl does not claim compliance or legal assurance.</li>
+          <li>alienctl does not claim ROI or cost savings.</li>
+          <li>alienctl does not add hosted behavior, payment custody, SDKs, or product UI.</li>
+          <li>alienctl does not claim mature enterprise platform readiness.</li>
+        </ul>
+      </section>
+
+      <section class="cta-section" id="cta" aria-labelledby="cta-title">
+        <p class="section-kicker">Design-Partner Pilot</p>
+        <h2 id="cta-title">Want to test the gate before your next AI-agent PR review?</h2>
+        <div class="cta-row">
+          <a class="button primary" href="mailto:hello@alienctl.com">Run a one-repo pilot</a>
+          <a class="button secondary" href="mailto:hello@alienctl.com">Ask about alienctl</a>
+        </div>
+      </section>
+    </main>
+  </body>
+</html>

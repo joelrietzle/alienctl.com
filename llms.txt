@@ -3,6 +3,7 @@
 > alienctl is the Swedish-built, customer-owned control and evidence layer for AI-produced software changes.
 
 Canonical URL: https://alienctl.com/
+Swedish URL: https://alienctl.com/sv/
 Contact: joel.rietz.le@gmail.com
 
 ## Core resources

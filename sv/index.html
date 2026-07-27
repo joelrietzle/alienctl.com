@@ -1,0 +1,237 @@
+<!doctype html>
+<html lang="sv">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Styrning av AI-genererad kod för svenska team | alienctl</title>
+    <meta name="description" content="Kundägd styrning och spårbar evidens för AI-genererade mjukvaruändringar. Svenskbyggt, lokalt eller i er molnmiljö, agentneutralt och tydligt med vad som inte är bevisat.">
+    <meta name="robots" content="index, follow, max-image-preview:large">
+    <meta name="theme-color" content="#f3f2ed">
+    <link rel="canonical" href="https://alienctl.com/sv/">
+    <link rel="alternate" hreflang="sv" href="https://alienctl.com/sv/">
+    <link rel="alternate" hreflang="en" href="https://alienctl.com/">
+    <link rel="alternate" hreflang="x-default" href="https://alienctl.com/">
+    <link rel="icon" href="/favicon.svg" type="image/svg+xml">
+    <link rel="stylesheet" href="/styles.css">
+    <meta property="og:type" content="website">
+    <meta property="og:locale" content="sv_SE">
+    <meta property="og:site_name" content="alienctl">
+    <meta property="og:title" content="Utveckla snabbare med AI-genererad kod—utan att lämna ifrån er kontrollen">
+    <meta property="og:description" content="Svenskbyggd, kundägd styrning och evidens för AI-genererade mjukvaruändringar.">
+    <meta property="og:url" content="https://alienctl.com/sv/">
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@graph": [
+          {
+            "@type": "SoftwareApplication",
+            "@id": "https://alienctl.com/#software",
+            "name": "alienctl",
+            "applicationCategory": "DeveloperApplication",
+            "operatingSystem": "Linux",
+            "url": "https://alienctl.com/sv/",
+            "inLanguage": "sv",
+            "description": "Ett svenskbyggt, kundägt styrnings- och evidenslager för AI-genererade mjukvaruändringar."
+          },
+          {
+            "@type": "FAQPage",
+            "@id": "https://alienctl.com/sv/#faq",
+            "inLanguage": "sv",
+            "mainEntity": [
+              {
+                "@type": "Question",
+                "name": "Vad är styrning av AI-genererade mjukvaruändringar?",
+                "acceptedAnswer": {
+                  "@type": "Answer",
+                  "text": "Det är en process som kontrollerar uppdrag, behörighet, observerade ändringar, verifiering, godkännanden och kvarvarande evidensluckor innan en AI-genererad ändring behandlas som redo att gå vidare."
+                }
+              },
+              {
+                "@type": "Question",
+                "name": "Ersätter alienctl kodgranskning eller CI?",
+                "acceptedAnswer": {
+                  "@type": "Answer",
+                  "text": "Nej. CI kontrollerar kod och byggen, och människor bedömer själva ändringen. alienctl avgör om den observerade arbetsprocessen har tillräcklig evidens och rätt godkännanden för att gå vidare."
+                }
+              },
+              {
+                "@type": "Question",
+                "name": "Bevisar alienctl att koden är korrekt eller regelefterlevande?",
+                "acceptedAnswer": {
+                  "@type": "Answer",
+                  "text": "Nej. alienctl redovisar avgränsad evidens och kvarvarande luckor. Det bevisar inte kodens korrekthet, produktionssäkerhet, regelefterlevnad eller ekonomisk nytta."
+                }
+              }
+            ]
+          }
+        ]
+      }
+    </script>
+  </head>
+  <body>
+    <a class="skip-link" href="#main">Hoppa till innehållet</a>
+    <header class="site-header" aria-label="Sidhuvud">
+      <a class="brand" href="/sv/" aria-label="alienctl startsida">alienctl<span aria-hidden="true">/</span></a>
+      <nav class="nav" aria-label="Huvudmeny">
+        <a href="#sa-fungerar-det">Så fungerar det</a>
+        <a href="#suveranitet">Suveränitet</a>
+        <a href="#pilot">Pilot</a>
+        <a href="#faq">Frågor</a>
+        <a href="/" lang="en">English</a>
+      </nav>
+      <a class="header-cta" href="#ansok">Ansök om pilot</a>
+    </header>
+
+    <main id="main">
+      <section class="hero" aria-labelledby="hero-title">
+        <div class="hero-copy">
+          <p class="eyebrow">Styrning av AI-genererad kod · Byggt i Sverige</p>
+          <h1 id="hero-title">Utveckla snabbare med AI—utan att lämna ifrån er kontrollen.</h1>
+          <p class="hero-lede">
+            alienctl omvandlar en observerad AI-kodningssession till ett kundägt
+            beslut: gå vidare, stoppa för saknad evidens eller begär mänskligt godkännande.
+          </p>
+          <div class="cta-row">
+            <a class="button primary" href="#ansok">Ansök om en pilot för ett repo</a>
+            <a class="text-link" href="#sa-fungerar-det">Se hur kontrollen fungerar <span aria-hidden="true">↓</span></a>
+          </div>
+          <p class="trust-line">Lokalt/BYOC · Agentneutralt · Kundägd evidens · Ingen driftad dashboard krävs</p>
+        </div>
+
+        <aside class="receipt" aria-label="Exempel på Run Control Receipt">
+          <div class="receipt-header">
+            <span>Run Control Receipt</span>
+            <strong><span aria-hidden="true">●</span> Granskning blockerad</strong>
+          </div>
+          <div class="receipt-decision">
+            <span>Beslut</span>
+            <p>Granska inte ännu.</p>
+            <small>Autentiseringskod ändrades utan evidens för godkännande.</small>
+          </div>
+          <dl class="receipt-facts">
+            <div><dt>Omfattning</dt><dd>Observerad</dd></div>
+            <div><dt>Verifiering</dt><dd>Godkänd</dd></div>
+            <div><dt>Känslig yta</dt><dd>Autentisering</dd></div>
+            <div><dt>Nästa steg</dt><dd>Begär godkännande</dd></div>
+          </dl>
+          <p class="receipt-footnote">Korrekt kod bevisad: nej. Kvarvarande luckor: uttryckliga.</p>
+        </aside>
+      </section>
+
+      <section class="definition" aria-labelledby="definition-title">
+        <p class="section-kicker">Vad är alienctl?</p>
+        <h2 id="definition-title">Det kundägda styrnings- och evidenslagret för AI-genererade mjukvaruändringar.</h2>
+        <p>
+          Kodagenter föreslår ändringar. Kvalitets- och säkerhetsverktyg analyserar
+          koden. alienctl avgör om den resulterande ändringen har tillräcklig
+          evidens och rätt godkännanden för att gå vidare.
+        </p>
+      </section>
+
+      <section class="section problem" aria-labelledby="problem-title">
+        <div class="section-heading">
+          <p class="section-kicker">Kontrolluckan</p>
+          <h2 id="problem-title">Diffen syns. Arbetet bakom den gör det ofta inte.</h2>
+        </div>
+        <div class="problem-copy">
+          <p>Innan granskningen börjar behöver teamet kunna svara på:</p>
+          <ul class="check-list">
+            <li>Vad hade agenten behörighet att ändra?</li>
+            <li>Vilka filer och känsliga ytor berördes?</li>
+            <li>Vilken verifiering kördes faktiskt?</li>
+            <li>Vilken evidens eller vilket godkännande saknas?</li>
+          </ul>
+        </div>
+      </section>
+
+      <section class="section" id="sa-fungerar-det" aria-labelledby="how-title">
+        <div class="section-heading">
+          <p class="section-kicker">Så fungerar det</p>
+          <h2 id="how-title">En kundägd kontrollslinga innan ändringen går vidare.</h2>
+          <p>Ingen ny kodagent. Ingen ny driftad dashboard. Ingen ersättning för CI.</p>
+        </div>
+        <ol class="steps">
+          <li><span>01</span><h3>Observera</h3><p>Avgränsa AI-sessionen och registrera repoändringarna.</p></li>
+          <li><span>02</span><h3>Kontrollera</h3><p>Utvärdera verifiering, policygränser och känsliga ytor.</p></li>
+          <li><span>03</span><h3>Besluta</h3><p>Gå vidare, blockera för evidens eller begär godkännande.</p></li>
+          <li><span>04</span><h3>Bevara</h3><p>Arkivera kvittot och uttryckliga luckor för rekonstruktion.</p></li>
+        </ol>
+      </section>
+
+      <section class="section sovereignty" id="suveranitet" aria-labelledby="sovereignty-title">
+        <div class="section-heading">
+          <p class="section-kicker">Europeisk operativ suveränitet</p>
+          <h2 id="sovereignty-title">Behåll kontrollen över arbetsflödet, evidensen och er exit.</h2>
+          <p>Svenskbyggt för organisationer som behöver leverantörsoberoende utan att överge de AI-verktyg teamet föredrar.</p>
+        </div>
+        <div class="sovereignty-grid">
+          <article><h3>Kundkontrollerat</h3><p>Den nuvarande piloten körs lokalt eller i köparens egen miljö.</p></article>
+          <article><h3>Agentneutralt</h3><p>Kontrollen byggs runt ändringen, inte runt ett enskilt AI-verktyg.</p></article>
+          <article><h3>Portabel evidens</h3><p>Maskinläsbara kvitton kräver ingen alienctl-driftad dashboard.</p></article>
+        </div>
+        <p class="boundary-note">
+          Operativ suveränitet är en egenskap hos drift och kontroll. Det är inte
+          ett löfte om juridisk immunitet, regelefterlevnad eller korrekt kod.
+        </p>
+      </section>
+
+      <section class="section pilot" id="pilot" aria-labelledby="pilot-title">
+        <div class="pilot-intro">
+          <p class="section-kicker">Två veckors designpartnerpilot</p>
+          <h2 id="pilot-title">Testa regeln i ett verkligt AI-arbetsflöde.</h2>
+          <p>Vi avgränsar ett repo, en ändringsklass, ansvariga personer och den evidens som krävs för att få gå vidare.</p>
+        </div>
+        <div class="pilot-card">
+          <h3>Det vi definierar tillsammans</h3>
+          <ul class="check-list">
+            <li>Ett repo, en ägare och en granskare</li>
+            <li>Nödvändiga verifieringskommandon</li>
+            <li>Känsliga ytor och godkännanderegler</li>
+            <li>Ett kundkontrollerat evidensarkiv</li>
+            <li>Ett beslut: fortsätt, utöka, integrera eller stoppa</li>
+          </ul>
+          <p class="pilot-rule">Under piloten behandlas inte ändringar med underkända kvitton som redo.</p>
+        </div>
+      </section>
+
+      <section class="section faq" id="faq" aria-labelledby="faq-title">
+        <div class="section-heading">
+          <p class="section-kicker">Vanliga frågor</p>
+          <h2 id="faq-title">De korta svaren.</h2>
+        </div>
+        <div class="faq-list">
+          <details>
+            <summary>Vad är styrning av AI-genererade mjukvaruändringar?</summary>
+            <p>En process som kontrollerar uppdrag, behörighet, observerade ändringar, verifiering, godkännanden och kvarvarande evidensluckor innan ändringen går vidare.</p>
+          </details>
+          <details>
+            <summary>Ersätter alienctl kodgranskning eller CI?</summary>
+            <p>Nej. CI kontrollerar kod och byggen, och människor bedömer ändringen. alienctl avgör om arbetsprocessen har tillräcklig evidens och rätt godkännanden.</p>
+          </details>
+          <details>
+            <summary>Skickas källkod till en driftad alienctl-tjänst?</summary>
+            <p>Den nuvarande piloten är lokal och köparkontrollerad. Den kräver ingen driftad dashboard, tredjepartsanalys eller alienctl-hanterade autentiseringsuppgifter.</p>
+          </details>
+          <details>
+            <summary>Bevisar alienctl korrekthet eller regelefterlevnad?</summary>
+            <p>Nej. alienctl redovisar avgränsad evidens och luckor. Det bevisar inte kodens korrekthet, produktionssäkerhet, regelefterlevnad eller ekonomisk nytta.</p>
+          </details>
+        </div>
+      </section>
+
+      <section class="apply" id="ansok" aria-labelledby="apply-title">
+        <p class="section-kicker">Ansökan för designpartner</p>
+        <h2 id="apply-title">Gör nästa beslut om AI-genererad kod uttryckligt.</h2>
+        <p>Berätta var AI-genererade ändringar skapar osäkerhet i granskning, säkerhet eller godkännande. Joel svarar personligen.</p>
+        <a class="button light" href="mailto:joel.rietz.le@gmail.com?subject=Svensk%20designpartnerpilot%20f%C3%B6r%20alienctl&amp;body=Organisation%3A%0ARoll%3A%0ALand%3A%0AAI-verktyg%3A%0ATyp%20av%20repo%3A%0ASt%C3%B6rsta%20gransknings-%20eller%20s%C3%A4kerhetsproblemet%3A%0A%C3%96nskad%20start%3A">Diskutera en pilot</a>
+        <small>Ingen e-postlista. Ingen automatiserad säljsekvens. Ett direkt samtal.</small>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <a class="brand footer-brand" href="/sv/">alienctl<span aria-hidden="true">/</span></a>
+      <p>Svenskbyggd, kundägd styrning av AI-genererade mjukvaruändringar.</p>
+      <a href="mailto:joel.rietz.le@gmail.com">joel.rietz.le@gmail.com</a>
+    </footer>
+  </body>
+</html>

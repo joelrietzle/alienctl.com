@@ -54,6 +54,7 @@ The page includes:
 - matching visible FAQ answers;
 - `robots.txt` and `sitemap.xml`;
 - semantic headings, landmarks, skip navigation, and keyboard-visible focus.
+- reciprocal English/Swedish `hreflang` metadata and sitemap alternates.
 
 The canonical URL, sitemap, and structured data assume the intended
 `alienctl.com` custom domain. They do not configure DNS, verify domain

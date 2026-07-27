@@ -1,6 +1,6 @@
 # alienctl
 
-> alienctl is the local/BYOC pre-review control and evidence layer for AI-generated software changes.
+> alienctl is the Swedish-built, customer-owned control and evidence layer for AI-produced software changes.
 
 Canonical URL: https://alienctl.com/
 Contact: joel.rietz.le@gmail.com
@@ -9,6 +9,8 @@ Contact: joel.rietz.le@gmail.com
 
 - [AI-agent change control](https://alienctl.com/guides/ai-agent-change-control/): definition, control boundary, workflow, and limitations.
 - [Review AI-generated code](https://alienctl.com/guides/review-ai-generated-code/): practical pre-review workflow and checklist.
+- [European AI software change control](https://alienctl.com/guides/european-ai-software-change-control/): operational-sovereignty procurement and architecture checklist.
+- [AI code governance landscape](https://alienctl.com/guides/ai-code-governance-landscape/): distinction between coding agents, runtime guardrails, code analysis, change control, and enterprise governance.
 
 ## Product boundary
 
@@ -20,5 +22,5 @@ compliance, or ROI. The current pilot is local and buyer-controlled.
 Runtime guardrails decide whether an agent action may execute. Enterprise
 governance platforms oversee AI assets and organizational risk. alienctl
 decides whether the resulting engineering change has enough evidence and
-approval to begin human review. It does not currently claim compatibility
+approval to proceed. It does not currently claim compatibility
 with Microsoft Agent Control Specification or IBM watsonx.governance.

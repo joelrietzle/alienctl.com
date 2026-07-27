@@ -411,7 +411,8 @@ h3 {
 .steps,
 .role-grid,
 .distinction-grid,
-.layer-grid {
+.layer-grid,
+.sovereignty-grid {
   display: grid;
   grid-template-columns: repeat(4, minmax(0, 1fr));
   gap: 1px;
@@ -427,7 +428,8 @@ h3 {
 .steps li,
 .role-grid article,
 .distinction-grid article,
-.layer-grid article {
+.layer-grid article,
+.sovereignty-grid article {
   min-height: 250px;
   padding: 28px;
   background: var(--surface);
@@ -474,6 +476,26 @@ h3 {
 
 .layer-grid {
   grid-template-columns: repeat(3, minmax(0, 1fr));
+}
+
+.sovereignty {
+  background: #e9eee5;
+}
+
+.sovereignty-grid {
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+}
+
+.sovereignty-grid article {
+  min-height: 220px;
+}
+
+.sovereignty-grid p {
+  color: var(--muted);
+}
+
+.table-scroll {
+  overflow-x: auto;
 }
 
 .layer-grid article {
@@ -786,6 +808,7 @@ h3 {
   .role-grid,
   .distinction-grid,
   .layer-grid,
+  .sovereignty-grid,
   .resource-grid {
     grid-template-columns: repeat(2, minmax(0, 1fr));
   }
@@ -809,6 +832,7 @@ h3 {
   .role-grid,
   .distinction-grid,
   .layer-grid,
+  .sovereignty-grid,
   .resource-grid {
     grid-template-columns: 1fr;
   }

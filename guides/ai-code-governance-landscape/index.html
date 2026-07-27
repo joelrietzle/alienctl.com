@@ -1,0 +1,132 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>AI Code Governance Tools: The Four Control Layers | alienctl</title>
+    <meta name="description" content="Compare AI coding agents, runtime guardrails, code quality tools, software change control, and enterprise AI governance by the decisions they make.">
+    <meta name="robots" content="index, follow, max-image-preview:large">
+    <link rel="canonical" href="https://alienctl.com/guides/ai-code-governance-landscape/">
+    <link rel="icon" href="/favicon.svg" type="image/svg+xml">
+    <link rel="stylesheet" href="/styles.css">
+    <meta property="og:type" content="article">
+    <meta property="og:title" content="AI code governance tools: understand the control layers">
+    <meta property="og:description" content="Choose tools by the decision they make, not by the word governance.">
+    <meta property="og:url" content="https://alienctl.com/guides/ai-code-governance-landscape/">
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "Article",
+        "headline": "AI Code Governance Tools: The Four Control Layers",
+        "description": "Compare AI coding agents, runtime guardrails, code quality tools, software change control, and enterprise AI governance.",
+        "datePublished": "2026-07-27",
+        "dateModified": "2026-07-27",
+        "author": {"@type": "Person", "name": "Joel Rietzle"},
+        "publisher": {"@type": "Organization", "name": "alienctl", "url": "https://alienctl.com/"},
+        "mainEntityOfPage": "https://alienctl.com/guides/ai-code-governance-landscape/"
+      }
+    </script>
+  </head>
+  <body>
+    <a class="skip-link" href="#main">Skip to content</a>
+    <header class="site-header">
+      <a class="brand" href="/">alienctl<span aria-hidden="true">/</span></a>
+      <nav class="nav" aria-label="Primary navigation">
+        <a href="/#how">How it works</a>
+        <a href="/#resources">Resources</a>
+        <a href="/#pilot">Pilot</a>
+      </nav>
+      <a class="header-cta" href="/#apply">Apply for pilot</a>
+    </header>
+    <main class="guide-main" id="main">
+      <article>
+        <header class="guide-hero">
+          <p class="eyebrow">AI code governance landscape</p>
+          <h1>Choose AI coding controls by the decision they make</h1>
+          <p class="hero-lede">“AI governance” describes several different control problems. Buying one layer does not automatically solve the others.</p>
+          <p class="guide-meta">By Joel Rietzle · Updated July 27, 2026 · 6 minute read</p>
+        </header>
+        <div class="guide-content">
+          <div class="answer-box">
+            <p>AI coding agents produce changes. Runtime guardrails control actions. Code analysis evaluates implementation properties. Change control decides whether evidence and approval are sufficient to proceed. Enterprise governance oversees organizational AI risk.</p>
+          </div>
+
+          <h2>The control-layer map</h2>
+          <div class="table-scroll" role="region" aria-label="AI governance control layers" tabindex="0">
+            <table class="guide-table">
+              <thead>
+                <tr><th>Layer</th><th>Core decision</th><th>Representative tools</th></tr>
+              </thead>
+              <tbody>
+                <tr><td>Coding agent</td><td>What code should be proposed?</td><td>Copilot, Cursor, Claude Code, Codex</td></tr>
+                <tr><td>Runtime guardrail</td><td>May this agent action execute?</td><td>Microsoft Agent Control Specification</td></tr>
+                <tr><td>Code quality and security</td><td>Does the implementation violate an analysis rule?</td><td>SonarQube, Snyk, Semgrep</td></tr>
+                <tr><td>Software change control</td><td>Is there sufficient evidence and approval to proceed?</td><td>alienctl</td></tr>
+                <tr><td>Enterprise AI governance</td><td>How is organizational AI risk inventoried and governed?</td><td>IBM watsonx.governance, Credo AI, Saidot</td></tr>
+              </tbody>
+            </table>
+          </div>
+
+          <h2>Why a code quality gate is not a run receipt</h2>
+          <p>
+            Static analysis can find bugs, vulnerabilities, and maintainability
+            problems. SonarQube’s AI Code Assurance applies stricter quality
+            gates to projects containing AI-generated code. That is useful
+            implementation evidence, but it does not necessarily establish what
+            the agent was authorized to change, whether every relevant action was
+            observed, or which human approval remains missing.
+          </p>
+
+          <h2>Why runtime control is not change readiness</h2>
+          <p>
+            Microsoft’s Agent Control Specification makes deterministic allow,
+            deny, warn, escalate, and transform decisions at intervention points
+            in an agent loop. A permitted sequence of actions can still result in
+            a change whose verification or approval evidence is incomplete.
+            Runtime policy and change readiness are therefore complementary.
+          </p>
+
+          <h2>Why enterprise governance is not a repository gate</h2>
+          <p>
+            Enterprise platforms such as IBM watsonx.governance organize AI
+            inventories, policies, risks, regulatory mappings, and reporting.
+            A repository workflow needs a more immediate decision: should a
+            reviewer or release owner proceed with this specific change?
+          </p>
+
+          <h2>The practical architecture</h2>
+          <ol>
+            <li>Let teams choose the coding agents that fit their work.</li>
+            <li>Apply runtime restrictions where action-level intervention is needed.</li>
+            <li>Use existing CI, quality, and security tools as evidence producers.</li>
+            <li>Require a customer-owned receipt before the change proceeds.</li>
+            <li>Export bounded evidence upward when enterprise governance requires it.</li>
+          </ol>
+          <p>
+            alienctl is being developed for step four. It does not replace the
+            other layers and does not currently claim integrations with the
+            named products.
+          </p>
+
+          <h2>Primary product references</h2>
+          <ul>
+            <li><a href="https://microsoft.github.io/agent-governance-toolkit/packages/agent-control-specification/">Microsoft Agent Control Specification</a></li>
+            <li><a href="https://docs.sonarsource.com/sonarqube-server/2026.1/ai-capabilities/ai-code-assurance">SonarQube AI Code Assurance</a></li>
+            <li><a href="https://www.ibm.com/products/watsonx-governance">IBM watsonx.governance</a></li>
+            <li><a href="https://www.credo.ai/product">Credo AI governance platform</a></li>
+          </ul>
+        </div>
+      </article>
+      <section class="guide-cta">
+        <h2>Find the missing control in your AI coding workflow.</h2>
+        <p>Bring one repository and one consequential AI-agent workflow. We will map the evidence and approval boundary with you.</p>
+        <a class="button light" href="mailto:joel.rietz.le@gmail.com?subject=AI%20code%20governance%20pilot&amp;body=Company%3A%0ACountry%3A%0ARole%3A%0ACurrent%20coding%20agents%3A%0ACurrent%20quality%20and%20security%20tools%3A%0AMissing%20control%3A">Discuss a design-partner pilot</a>
+      </section>
+    </main>
+    <footer class="site-footer">
+      <a class="brand footer-brand" href="/">alienctl<span aria-hidden="true">/</span></a>
+      <p>Swedish-built, customer-owned AI software change control.</p>
+      <a href="mailto:joel.rietz.le@gmail.com">joel.rietz.le@gmail.com</a>
+    </footer>
+  </body>
+</html>

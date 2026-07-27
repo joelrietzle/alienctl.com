@@ -6,7 +6,8 @@ This directory contains a minimal static landing-page package for
 ## Purpose
 
 The page supports external buyer/operator validation for the design-partner
-pilot. It positions alienctl as AI-agent change control before code review and
+pilot. It positions alienctl as Swedish-built, customer-owned AI software
+change control and
 uses the wedge:
 
 ```text
@@ -38,7 +39,9 @@ mailto:joel.rietz.le@gmail.com
 This records a qualified response in the buyer-controlled mailbox without
 adding analytics, cookies, a form backend, credentials, or a third-party
 processor. It does not provide page-view attribution or automated conversion
-analytics.
+analytics. Each editorial landing page uses a distinct email subject so Joel
+can record the originating content theme without cookies, browser storage,
+analytics scripts, or a form processor.
 
 ## Search And Answer Metadata
 

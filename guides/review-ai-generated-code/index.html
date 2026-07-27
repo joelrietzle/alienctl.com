@@ -36,7 +36,7 @@
         <a href="/#resources">Resources</a>
         <a href="/#pilot">Pilot</a>
       </nav>
-      <a class="header-cta" href="/#apply">Apply for pilot</a>
+      <a class="header-cta" href="/#apply">Apply for a pilot</a>
     </header>
     <main class="guide-main" id="main">
       <article>
@@ -44,7 +44,7 @@
           <p class="eyebrow">AI-generated code review</p>
           <h1>How to review AI-generated code without wasting reviewer time</h1>
           <p class="hero-lede">Before judging the implementation, establish whether the agent’s change is ready to be reviewed at all.</p>
-          <p class="guide-meta">By alienctl · Updated July 27, 2026 · 8 minute read</p>
+          <p class="guide-meta">By alienctl · Updated July 27, 2026 · 8-minute read</p>
         </header>
         <div class="guide-content">
           <div class="answer-box">
@@ -55,8 +55,8 @@
           <ol>
             <li><strong>Confirm the intended change.</strong> Can the reviewer state the human-approved objective without relying on the agent’s retrospective summary?</li>
             <li><strong>Establish attribution.</strong> Separate files changed during the observed agent session from pre-existing dirty work.</li>
-            <li><strong>Inspect sensitive surfaces.</strong> Identify auth, secrets, CI, infrastructure, deployment, customer data, payments, and external mutations.</li>
-            <li><strong>Verify the verification.</strong> Record the exact commands that ran and whether each one passed. “Tests passed” is not sufficient evidence.</li>
+            <li><strong>Inspect sensitive surfaces.</strong> Identify authentication, secrets, CI, infrastructure, deployment, customer data, payments, and external mutations.</li>
+            <li><strong>Verify the checks.</strong> Record the exact commands that ran and whether each one passed. “Tests passed” is not sufficient evidence.</li>
             <li><strong>Check approval evidence.</strong> Sensitive work should name the approving human or return an explicit approval-required decision.</li>
             <li><strong>Make gaps visible.</strong> Missing evidence must remain a blocking fact, not be rewritten as confidence.</li>
             <li><strong>Decide readiness.</strong> Begin review, block for evidence, or request approval—with one actionable reason.</li>
@@ -82,7 +82,7 @@
             <thead><tr><th>Decision</th><th>When to use it</th><th>Reviewer action</th></tr></thead>
             <tbody>
               <tr><td>Review may begin</td><td>Required evidence exists and no blocking policy gap is present.</td><td>Perform normal semantic review.</td></tr>
-              <tr><td>Do not review yet</td><td>Verification failed, attribution is unclear, or required evidence is missing.</td><td>Return the exact remediation.</td></tr>
+              <tr><td>Do not review yet</td><td>Verification failed, attribution is unclear, or required evidence is missing.</td><td>Request the specific missing evidence or correction.</td></tr>
               <tr><td>Approval required</td><td>A sensitive surface or authority boundary needs a named human decision.</td><td>Route to the correct owner.</td></tr>
             </tbody>
           </table>
@@ -92,7 +92,7 @@
 
           <h2>A low-risk adoption path</h2>
           <p>Choose one repository with active AI-agent work and a reviewer who already experiences ambiguity. Define sensitive surfaces and verification commands before the pilot. For two weeks, require a passing receipt before meaningful AI-agent changes enter review.</p>
-          <p>Track whether blocks prevented unready work, caught missing approval, clarified attribution, or improved reconstruction. Also record ceremony: confusing failures, repeated information, ignored receipts, and setup cost. Continue only if the team wants to keep enforcing the gate.</p>
+          <p>Track whether blocks prevented unready work, caught missing approval, clarified attribution, or improved reconstruction. Also record friction: confusing failures, repeated information, ignored receipts, and setup cost. Continue only if the team wants to keep enforcing the gate.</p>
 
           <h2>Understand the control model</h2>
           <p>Read <a href="/guides/ai-agent-change-control/">What is AI-agent change control?</a> for the boundary, evidence model, and distinction from correctness or compliance.</p>

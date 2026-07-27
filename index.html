@@ -101,7 +101,7 @@
                 "name": "Does alienctl send source code to a hosted service?",
                 "acceptedAnswer": {
                   "@type": "Answer",
-                  "text": "The current pilot is local and buyer-controlled. It does not require a hosted dashboard, third-party analytics, or alienctl-managed credentials."
+                  "text": "The current pilot is local and customer-controlled. It does not require a hosted dashboard, third-party analytics, or alienctl-managed credentials."
                 }
               },
               {
@@ -130,7 +130,7 @@
         <a href="#faq">FAQ</a>
         <a href="/sv/" lang="sv">Svenska</a>
       </nav>
-      <a class="header-cta" href="#apply">Apply for pilot</a>
+      <a class="header-cta" href="#apply">Apply for a pilot</a>
     </header>
 
     <main id="main">
@@ -146,7 +146,7 @@
             <a class="button primary" href="#apply">Apply for a one-repo pilot</a>
             <a class="text-link" href="#how">See how the gate works <span aria-hidden="true">↓</span></a>
           </div>
-          <p class="trust-line">Local/BYOC · Agent-neutral · Buyer-controlled evidence · No hosted dashboard required</p>
+          <p class="trust-line">Local/BYOC · Agent-neutral · Customer-controlled evidence · No hosted dashboard required</p>
         </div>
 
         <aside class="receipt" aria-label="Example Run Control Receipt">
@@ -157,7 +157,7 @@
           <div class="receipt-decision">
             <span>Decision</span>
             <p>Do not review yet.</p>
-            <small>Auth-sensitive code changed without approval evidence.</small>
+            <small>Authentication code changed without approval evidence.</small>
           </div>
           <dl class="receipt-facts">
             <div>
@@ -170,14 +170,14 @@
             </div>
             <div>
               <dt>Sensitive surface</dt>
-              <dd>Auth</dd>
+              <dd>Authentication</dd>
             </div>
             <div>
               <dt>Next action</dt>
               <dd>Request approval</dd>
             </div>
           </dl>
-          <p class="receipt-footnote">Code correctness proven: no. Remaining gaps: explicit.</p>
+          <p class="receipt-footnote">Code correctness: not proven. Remaining gaps: explicit.</p>
         </aside>
       </section>
 
@@ -207,7 +207,7 @@
           <ul class="check-list">
             <li>What was the agent authorized to change?</li>
             <li>Which files and sensitive surfaces did it touch?</li>
-            <li>Which verification actually ran?</li>
+            <li>Which verification checks actually ran?</li>
             <li>What evidence or approval is still missing?</li>
           </ul>
         </div>
@@ -233,7 +233,7 @@
           <li>
             <span>03</span>
             <h3>Decide</h3>
-            <p>Tell the reviewer to begin, block for evidence, or request approval.</p>
+            <p>Tell the reviewer whether to begin, block for evidence, or request approval.</p>
           </li>
           <li>
             <span>04</span>
@@ -255,7 +255,7 @@
       <section class="section roles" aria-labelledby="roles-title">
         <div class="section-heading">
           <p class="section-kicker">One receipt, clearer decisions</p>
-          <h2 id="roles-title">Useful to every owner of the review boundary.</h2>
+          <h2 id="roles-title">Clearer decisions for everyone who owns the review boundary.</h2>
         </div>
         <div class="role-grid">
           <article>
@@ -271,7 +271,7 @@
           <article>
             <p class="role-number">03</p>
             <h3>Platform engineering</h3>
-            <p>Use a local/BYOC, machine-readable gate inside buyer-owned workflows.</p>
+            <p>Use a local/BYOC, machine-readable gate inside customer-owned workflows.</p>
           </article>
           <article>
             <p class="role-number">04</p>
@@ -321,7 +321,7 @@
         <div class="sovereignty-grid">
           <article>
             <h3>Customer-controlled</h3>
-            <p>The current pilot runs locally or in buyer-owned infrastructure. Evidence stays under the buyer’s control.</p>
+            <p>During the current pilot, alienctl runs locally or in customer-owned infrastructure. The customer controls the evidence.</p>
           </article>
           <article>
             <h3>Agent-neutral</h3>
@@ -353,10 +353,10 @@
             <li>One repository, owner, and reviewer</li>
             <li>Required verification commands</li>
             <li>Sensitive surfaces and approval rules</li>
-            <li>A buyer-controlled evidence archive</li>
+            <li>A customer-controlled evidence archive</li>
             <li>A pass, expand, integrate, or stop decision</li>
           </ul>
-          <p class="pilot-rule">For two weeks, failed receipts block review as ready.</p>
+          <p class="pilot-rule">For two weeks, a failed receipt means the change is not ready for review.</p>
         </div>
       </section>
 
@@ -436,7 +436,7 @@
           <details>
             <summary>Does alienctl send source code to a hosted service?</summary>
             <p>
-              The current pilot is local and buyer-controlled. It does not require a
+              The current pilot is local and customer-controlled. It does not require a
               hosted dashboard, third-party analytics, or alienctl-managed credentials.
             </p>
           </details>
@@ -450,9 +450,9 @@
           <details>
             <summary>Who is the pilot for?</summary>
             <p>
-              CTO, CISO, platform, AppSec, developer-productivity, and engineering
-              teams already using AI agents in a repository with a real review or
-              security control problem.
+              CTOs, CISOs, and platform, AppSec, developer-productivity, or
+              engineering teams already using AI agents in a repository with a
+              real review or security control problem.
             </p>
           </details>
           <details>

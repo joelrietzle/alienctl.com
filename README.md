@@ -1,14 +1,17 @@
-# alienctl.com Landing Page
+# alienctl.com
 
-This directory contains a minimal static landing-page package for
-`alienctl.com`.
+[alienctl.com](https://alienctl.com/) is the public website for alienctl:
+Swedish-built, customer-owned control and evidence for AI-produced software
+changes.
 
 ## Purpose
 
-The page supports external buyer/operator validation for the design-partner
-pilot. It positions alienctl as Swedish-built, customer-owned AI software
-change control and
-uses the wedge:
+The website supports external buyer and operator validation for a bounded
+design-partner pilot. Its product boundary is the decision before human review:
+whether an observed AI-agent repository session has enough evidence and
+approval to proceed.
+
+The current wedge is:
 
 ```text
 No valid Run Control Receipt, no AI-agent PR review.
@@ -19,11 +22,11 @@ No valid Run Control Receipt, no AI-agent PR review.
 The package is static HTML, CSS, and crawl-control metadata:
 
 ```text
-landing/alienctl.com/.nojekyll
-landing/alienctl.com/index.html
-landing/alienctl.com/robots.txt
-landing/alienctl.com/sitemap.xml
-landing/alienctl.com/styles.css
+.nojekyll
+index.html
+robots.txt
+sitemap.xml
+styles.css
 ```
 
 There is no JavaScript, backend, hosted app behavior, auth, database,
@@ -45,7 +48,7 @@ analytics scripts, or a form processor.
 
 ## Search And Answer Metadata
 
-The page includes:
+The website includes:
 
 - one canonical URL for `https://alienctl.com/`;
 - unique title and meta description;
@@ -56,9 +59,10 @@ The page includes:
 - semantic headings, landmarks, skip navigation, and keyboard-visible focus.
 - reciprocal English/Swedish `hreflang` metadata and sitemap alternates.
 
-The canonical URL, sitemap, and structured data assume the intended
-`alienctl.com` custom domain. They do not configure DNS, verify domain
-ownership, submit the sitemap, or guarantee ranking or answer-engine citation.
+The canonical URL, sitemap, and structured data use the verified
+`https://alienctl.com/` custom domain. Search-engine discovery remains external
+state: valid metadata and sitemap submission do not guarantee crawling,
+indexing, ranking, or answer-engine citation.
 
 ## Content Boundary
 
@@ -71,9 +75,8 @@ hosted behavior, or mature enterprise platform readiness.
 
 ## GitHub Pages Deployment
 
-For free static hosting, publish the contents of this directory from a public
-GitHub Pages repository. Keep the package root as the Pages source and include
-`.nojekyll` so GitHub Pages serves the static files without Jekyll processing.
+The repository root is published from the `main` branch through GitHub Pages.
+The `.nojekyll` marker keeps the deployment on the static-file path.
 
 Do not add analytics, forms, secrets, backend routes, auth, dashboards, SDKs,
 or provider integrations as part of the landing-page deployment.
@@ -82,9 +85,6 @@ Current deployment:
 
 ```text
 Repository: https://github.com/joelrietzle/alienctl.com
-URL: https://joelrietzle.github.io/alienctl.com/
+Canonical URL: https://alienctl.com/
 Source: public GitHub Pages repository, main branch, repository root
 ```
-
-This is the free GitHub Pages URL. Serving the page at `alienctl.com` still
-requires a DNS/custom-domain step owned outside this repository.

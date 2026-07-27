@@ -3,26 +3,32 @@
         xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
     <loc>https://alienctl.com/</loc>
+    <lastmod>2026-07-27</lastmod>
     <xhtml:link rel="alternate" hreflang="en" href="https://alienctl.com/"/>
     <xhtml:link rel="alternate" hreflang="sv" href="https://alienctl.com/sv/"/>
     <xhtml:link rel="alternate" hreflang="x-default" href="https://alienctl.com/"/>
   </url>
   <url>
     <loc>https://alienctl.com/sv/</loc>
+    <lastmod>2026-07-27</lastmod>
     <xhtml:link rel="alternate" hreflang="sv" href="https://alienctl.com/sv/"/>
     <xhtml:link rel="alternate" hreflang="en" href="https://alienctl.com/"/>
     <xhtml:link rel="alternate" hreflang="x-default" href="https://alienctl.com/"/>
   </url>
   <url>
     <loc>https://alienctl.com/guides/review-ai-generated-code/</loc>
+    <lastmod>2026-07-27</lastmod>
   </url>
   <url>
     <loc>https://alienctl.com/guides/ai-agent-change-control/</loc>
+    <lastmod>2026-07-27</lastmod>
   </url>
   <url>
     <loc>https://alienctl.com/guides/european-ai-software-change-control/</loc>
+    <lastmod>2026-07-27</lastmod>
   </url>
   <url>
     <loc>https://alienctl.com/guides/ai-code-governance-landscape/</loc>
+    <lastmod>2026-07-27</lastmod>
   </url>
 </urlset>

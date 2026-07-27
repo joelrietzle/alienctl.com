@@ -1,0 +1,18 @@
+# alienctl
+
+> alienctl is a local/BYOC pre-review control gate for AI-agent repository sessions.
+
+Canonical URL: https://alienctl.com/
+Contact: joel.rietz.le@gmail.com
+
+## Core resources
+
+- [AI-agent change control](https://alienctl.com/guides/ai-agent-change-control/): definition, control boundary, workflow, and limitations.
+- [Review AI-generated code](https://alienctl.com/guides/review-ai-generated-code/): practical pre-review workflow and checklist.
+
+## Product boundary
+
+alienctl observes a bounded AI-agent repository session, evaluates declared
+verification and local policy evidence, and produces a reviewer-readable
+workflow decision. It does not prove code correctness, production safety,
+compliance, or ROI. The current pilot is local and buyer-controlled.

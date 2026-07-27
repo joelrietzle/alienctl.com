@@ -1,0 +1,98 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>What Is AI-Agent Change Control? A Practical Guide | alienctl</title>
+    <meta name="description" content="AI-agent change control checks scope, observed changes, verification, sensitive surfaces, and evidence before AI-generated code enters human review.">
+    <meta name="robots" content="index, follow, max-image-preview:large">
+    <link rel="canonical" href="https://alienctl.com/guides/ai-agent-change-control/">
+    <link rel="icon" href="/favicon.svg" type="image/svg+xml">
+    <link rel="stylesheet" href="/styles.css">
+    <meta property="og:type" content="article">
+    <meta property="og:title" content="What is AI-agent change control?">
+    <meta property="og:description" content="A practical control model for AI-generated software changes before human review.">
+    <meta property="og:url" content="https://alienctl.com/guides/ai-agent-change-control/">
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "Article",
+        "headline": "What Is AI-Agent Change Control?",
+        "description": "A practical control model for AI-generated software changes before human review.",
+        "datePublished": "2026-07-27",
+        "dateModified": "2026-07-27",
+        "author": {"@type": "Person", "name": "Joel Rietzle"},
+        "publisher": {"@type": "Organization", "name": "alienctl", "url": "https://alienctl.com/"},
+        "mainEntityOfPage": "https://alienctl.com/guides/ai-agent-change-control/"
+      }
+    </script>
+  </head>
+  <body>
+    <a class="skip-link" href="#main">Skip to content</a>
+    <header class="site-header">
+      <a class="brand" href="/">alienctl<span aria-hidden="true">/</span></a>
+      <nav class="nav" aria-label="Primary navigation">
+        <a href="/#how">How it works</a>
+        <a href="/#resources">Resources</a>
+        <a href="/#pilot">Pilot</a>
+      </nav>
+      <a class="header-cta" href="/#apply">Apply for pilot</a>
+    </header>
+    <main class="guide-main" id="main">
+      <article>
+        <header class="guide-hero">
+          <p class="eyebrow">AI coding governance</p>
+          <h1>What is AI-agent change control?</h1>
+          <p class="hero-lede">A practical control boundary between an autonomous coding run and the moment a human reviewer is asked to trust its output.</p>
+          <p class="guide-meta">By Joel Rietzle · Updated July 27, 2026 · 7 minute read</p>
+        </header>
+        <div class="guide-content">
+          <div class="answer-box">
+            <p>AI-agent change control is a pre-review workflow that checks an agent’s authorized scope, observed repository changes, declared verification, sensitive surfaces, and missing evidence before its code enters human review.</p>
+          </div>
+
+          <h2>Why ordinary code review starts too late</h2>
+          <p>A pull-request diff shows the resulting code. It does not reliably show what the agent was authorized to do, whether the repository was already dirty, which commands actually ran, whether sensitive files require approval, or which parts of the agent’s summary are supported by evidence.</p>
+          <p>That creates a review-readiness problem. Reviewers spend their first minutes reconstructing the run instead of judging the change. Green CI helps, but it answers whether configured checks passed—not whether the work arrived with a trustworthy boundary and complete enough evidence.</p>
+
+          <h2>The five parts of a useful control boundary</h2>
+          <ol>
+            <li><strong>Authorized scope:</strong> the human-approved objective and surfaces the agent may change.</li>
+            <li><strong>Observed change:</strong> the repository delta attributed to the bounded session.</li>
+            <li><strong>Verification evidence:</strong> the declared commands and their recorded pass or failure state.</li>
+            <li><strong>Sensitive-surface policy:</strong> explicit treatment of auth, secrets, infrastructure, deployment, customer data, payments, or external mutation.</li>
+            <li><strong>Review decision:</strong> begin review, block for evidence, or request human approval—with the reason preserved.</li>
+          </ol>
+
+          <h2>Change control is not code correctness</h2>
+          <p>A valid control record cannot prove that generated code is correct. Tests can be incomplete, requirements can be misunderstood, and an authorized change can still contain a bug. The control record should say exactly what it proves and what remains unknown.</p>
+          <table class="guide-table">
+            <thead><tr><th>It can establish</th><th>It cannot establish</th></tr></thead>
+            <tbody>
+              <tr><td>Observed scope and files changed</td><td>Absence of all bugs</td></tr>
+              <tr><td>Declared checks passed or failed</td><td>Complete semantic correctness</td></tr>
+              <tr><td>Sensitive surfaces were identified</td><td>Production safety or compliance</td></tr>
+              <tr><td>Evidence and gaps are explicit</td><td>Business value or ROI</td></tr>
+            </tbody>
+          </table>
+
+          <h2>Where the gate belongs</h2>
+          <p>The first useful enforcement point is immediately before AI-agent PR review. The agent finishes its bounded session, the local gate evaluates the recorded evidence, and the reviewer receives a decision before opening raw chat or beginning line-by-line review.</p>
+          <p>The operating rule is simple: no valid Run Control Receipt, no AI-agent PR review. A failed receipt is not a verdict on the code. It means the work is not yet ready to consume reviewer attention as a reviewable change.</p>
+
+          <h2>How to introduce it without creating ceremony</h2>
+          <p>Start with one active repository and one real control problem. Name the reviewer, verification commands, sensitive surfaces, approval owner, and evidence-retention path. Run the gate for two weeks and record whether each block caught useful missing evidence or merely repeated information the team already had.</p>
+          <p>The pilot is valuable only if it changes a real review or security decision. If reviewers ignore the receipt, blocks are confusing, or no one will enforce the rule afterward, the workflow has not demonstrated product value.</p>
+
+          <h2>Related guide</h2>
+          <p>Use the <a href="/guides/review-ai-generated-code/">AI-generated code review checklist</a> to turn this control model into a concrete pre-review workflow.</p>
+        </div>
+      </article>
+      <section class="guide-cta">
+        <h2>Test the boundary in one repository.</h2>
+        <p>Run a two-week local/BYOC pilot with one owner, one reviewer, explicit verification, and a real enforcement rule.</p>
+        <a class="button light" href="/#apply">Apply for a one-repo pilot</a>
+      </section>
+    </main>
+  </body>
+</html>

@@ -24,6 +24,16 @@
         "@context": "https://schema.org",
         "@graph": [
           {
+            "@type": "Organization",
+            "@id": "https://alienctl.com/#organization",
+            "name": "alienctl",
+            "url": "https://alienctl.com/",
+            "email": "joel.rietz.le@gmail.com",
+            "sameAs": [
+              "https://www.linkedin.com/company/alienctl/"
+            ]
+          },
+          {
             "@type": "SoftwareApplication",
             "@id": "https://alienctl.com/#software",
             "name": "alienctl",
@@ -31,7 +41,10 @@
             "operatingSystem": "Linux",
             "url": "https://alienctl.com/sv/",
             "inLanguage": "sv",
-            "description": "Ett svenskbyggt, kundägt styrnings- och evidenslager för AI-genererade mjukvaruändringar."
+            "description": "Ett svenskbyggt, kundägt styrnings- och evidenslager för AI-genererade mjukvaruändringar.",
+            "provider": {
+              "@id": "https://alienctl.com/#organization"
+            }
           },
           {
             "@type": "FAQPage",

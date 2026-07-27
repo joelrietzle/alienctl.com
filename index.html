@@ -3,163 +3,393 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>alienctl | AI-agent change control before code review</title>
+    <title>AI-Agent Change Control Before Code Review | alienctl</title>
     <meta
       name="description"
-      content="alienctl is a local/BYOC Run Control Receipt gate for observed AI-agent repo sessions before PR review."
+      content="alienctl gives engineering teams a local, evidence-backed gate for AI-generated code before human review begins. Apply for a two-week, one-repo pilot."
     >
+    <meta name="robots" content="index, follow, max-image-preview:large">
+    <meta name="theme-color" content="#f3f2ed">
+    <link rel="canonical" href="https://alienctl.com/">
     <link rel="stylesheet" href="styles.css">
+
+    <meta property="og:type" content="website">
+    <meta property="og:site_name" content="alienctl">
+    <meta property="og:title" content="Control AI-generated code before review begins">
+    <meta
+      property="og:description"
+      content="A local/BYOC gate that turns AI-agent repository sessions into evidence-backed review decisions."
+    >
+    <meta property="og:url" content="https://alienctl.com/">
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:title" content="Control AI-generated code before review begins">
+    <meta
+      name="twitter:description"
+      content="A local/BYOC gate that turns AI-agent repository sessions into evidence-backed review decisions."
+    >
+
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@graph": [
+          {
+            "@type": "Organization",
+            "@id": "https://alienctl.com/#organization",
+            "name": "alienctl",
+            "url": "https://alienctl.com/",
+            "email": "hello@alienctl.com"
+          },
+          {
+            "@type": "SoftwareApplication",
+            "@id": "https://alienctl.com/#software",
+            "name": "alienctl",
+            "applicationCategory": "DeveloperApplication",
+            "operatingSystem": "Linux",
+            "url": "https://alienctl.com/",
+            "description": "A local and bring-your-own-cloud change-control gate for AI-agent repository sessions before code review.",
+            "provider": {
+              "@id": "https://alienctl.com/#organization"
+            }
+          },
+          {
+            "@type": "FAQPage",
+            "@id": "https://alienctl.com/#faq",
+            "mainEntity": [
+              {
+                "@type": "Question",
+                "name": "What is AI-agent change control?",
+                "acceptedAnswer": {
+                  "@type": "Answer",
+                  "text": "AI-agent change control is a workflow for checking an agent's authorized scope, observed repository changes, declared verification, sensitive surfaces, and evidence gaps before human code review begins."
+                }
+              },
+              {
+                "@type": "Question",
+                "name": "What is a Run Control Receipt?",
+                "acceptedAnswer": {
+                  "@type": "Answer",
+                  "text": "A Run Control Receipt is a reviewer-readable record of a bounded AI-agent run. It shows what changed, what checks ran, which policy boundaries applied, what blocks review, and what remains unproven."
+                }
+              },
+              {
+                "@type": "Question",
+                "name": "Does alienctl replace CI or code review?",
+                "acceptedAnswer": {
+                  "@type": "Answer",
+                  "text": "No. CI checks code and builds, while human reviewers judge the change. alienctl provides a pre-review decision about whether the AI-agent run has enough evidence and approval to begin review."
+                }
+              },
+              {
+                "@type": "Question",
+                "name": "Does alienctl send source code to a hosted service?",
+                "acceptedAnswer": {
+                  "@type": "Answer",
+                  "text": "The current pilot is local and buyer-controlled. It does not require a hosted dashboard, third-party analytics, or alienctl-managed credentials."
+                }
+              },
+              {
+                "@type": "Question",
+                "name": "Can alienctl prove that AI-generated code is correct?",
+                "acceptedAnswer": {
+                  "@type": "Answer",
+                  "text": "No. alienctl records bounded-run evidence and explicit gaps. It does not prove code correctness, production safety, compliance, or return on investment."
+                }
+              }
+            ]
+          }
+        ]
+      }
+    </script>
   </head>
   <body>
-    <header class="site-header" aria-label="Site">
-      <a class="brand" href="#top" aria-label="alienctl home">alienctl</a>
-      <nav class="nav" aria-label="Primary">
-        <a href="#rule">Rule</a>
+    <a class="skip-link" href="#main">Skip to content</a>
+
+    <header class="site-header" aria-label="Site header">
+      <a class="brand" href="#top" aria-label="alienctl home">alienctl<span aria-hidden="true">/</span></a>
+      <nav class="nav" aria-label="Primary navigation">
+        <a href="#how">How it works</a>
         <a href="#pilot">Pilot</a>
-        <a href="mailto:hello@alienctl.com">Contact</a>
+        <a href="#faq">FAQ</a>
       </nav>
+      <a class="header-cta" href="#apply">Apply for pilot</a>
     </header>
 
-    <main id="top">
-      <section class="hero" aria-labelledby="hero-title">
+    <main id="main">
+      <section class="hero" id="top" aria-labelledby="hero-title">
         <div class="hero-copy">
-          <p class="eyebrow">AI-agent change control before code review</p>
-          <h1 id="hero-title">No valid Run Control Receipt, no AI-agent PR review.</h1>
+          <p class="eyebrow">AI-agent change control</p>
+          <h1 id="hero-title">Control AI-generated code before review begins.</h1>
           <p class="hero-lede">
-            alienctl helps engineering teams observe local AI-agent repo sessions,
-            check them against local policy, and hand reviewers a decision-ready
-            evidence packet before review begins.
+            alienctl observes an AI-agent repository session, checks its evidence
+            and policy boundaries, and tells reviewers whether review may begin.
           </p>
-          <div class="cta-row" aria-label="Primary actions">
-            <a class="button primary" href="mailto:hello@alienctl.com">Run a one-repo pilot</a>
-            <a class="button secondary" href="mailto:hello@alienctl.com">Ask about alienctl</a>
+          <div class="cta-row">
+            <a class="button primary" href="#apply">Apply for a one-repo pilot</a>
+            <a class="text-link" href="#how">See how the gate works <span aria-hidden="true">↓</span></a>
           </div>
+          <p class="trust-line">Local/BYOC · Buyer-controlled evidence · No hosted dashboard required</p>
         </div>
 
-        <aside class="receipt-panel" aria-label="Example reviewer packet">
-          <div class="receipt-topline">
+        <aside class="receipt" aria-label="Example Run Control Receipt">
+          <div class="receipt-header">
             <span>Run Control Receipt</span>
-            <strong>review blocked</strong>
+            <strong><span aria-hidden="true">●</span> Review blocked</strong>
           </div>
-          <dl class="receipt-grid">
+          <div class="receipt-decision">
+            <span>Decision</span>
+            <p>Do not review yet.</p>
+            <small>Auth-sensitive code changed without approval evidence.</small>
+          </div>
+          <dl class="receipt-facts">
             <div>
-              <dt>Session</dt>
-              <dd>observed local repo</dd>
-            </div>
-            <div>
-              <dt>Policy</dt>
-              <dd>local receipt gate</dd>
+              <dt>Scope</dt>
+              <dd>Observed</dd>
             </div>
             <div>
               <dt>Verification</dt>
-              <dd>declared evidence required</dd>
+              <dd>Passed</dd>
             </div>
             <div>
-              <dt>Archive</dt>
-              <dd>receipt + decision packet</dd>
+              <dt>Sensitive surface</dt>
+              <dd>Auth</dd>
+            </div>
+            <div>
+              <dt>Next action</dt>
+              <dd>Request approval</dd>
             </div>
           </dl>
-          <p class="receipt-note">
-            Code correctness proven: no. Reviewer action: open the packet before review.
-          </p>
+          <p class="receipt-footnote">Code correctness proven: no. Remaining gaps: explicit.</p>
         </aside>
       </section>
 
-      <section class="section" id="problem" aria-labelledby="problem-title">
-        <p class="section-kicker">Problem</p>
-        <h2 id="problem-title">AI-agent PRs arrive with too much uncertainty.</h2>
+      <section class="definition" aria-labelledby="definition-title">
+        <p class="section-kicker">What is alienctl?</p>
+        <h2 id="definition-title">
+          A pre-review control gate for engineering teams using AI agents.
+        </h2>
         <p>
-          Reviewers are asked to judge code after the fact, often without a clear record of
-          what the agent changed, which commands ran, which evidence is missing, or whether
-          sensitive surfaces need approval before review starts.
+          alienctl turns an observed AI-agent repository session into a clear
+          workflow decision: begin review, block for missing evidence, or request
+          human approval. The output is a local, reviewer-readable Run Control Receipt.
         </p>
       </section>
 
-      <section class="section rule-band" id="rule" aria-labelledby="rule-title">
-        <p class="section-kicker">The Rule</p>
-        <h2 id="rule-title">No valid receipt, no AI-agent PR review.</h2>
-        <p>
-          alienctl turns the first decision into a local control point: may this AI-agent
-          change begin human review, or must it be fixed, verified, approved, or reconstructed
-          first?
-        </p>
+      <section class="section problem" aria-labelledby="problem-title">
+        <div class="section-heading">
+          <p class="section-kicker">The control gap</p>
+          <h2 id="problem-title">The diff is visible. The run behind it often is not.</h2>
+        </div>
+        <div class="problem-copy">
+          <p>
+            AI-generated pull requests can reach reviewers without a reliable
+            answer to four basic questions:
+          </p>
+          <ul class="check-list">
+            <li>What was the agent authorized to change?</li>
+            <li>Which files and sensitive surfaces did it touch?</li>
+            <li>Which verification actually ran?</li>
+            <li>What evidence or approval is still missing?</li>
+          </ul>
+        </div>
       </section>
 
       <section class="section" id="how" aria-labelledby="how-title">
-        <p class="section-kicker">How It Works</p>
-        <h2 id="how-title">A local gate around the repo session.</h2>
+        <div class="section-heading">
+          <p class="section-kicker">How it works</p>
+          <h2 id="how-title">One local control loop before human review.</h2>
+          <p>No agent wrapper. No new dashboard. No replacement for CI.</p>
+        </div>
         <ol class="steps">
-          <li>Observe the AI-agent repo session locally.</li>
-          <li>Run local receipt-policy checks after the work stops.</li>
-          <li>Generate a reviewer-ready workflow decision.</li>
-          <li>Archive receipt evidence for later audit or incident reconstruction.</li>
+          <li>
+            <span>01</span>
+            <h3>Observe</h3>
+            <p>Bracket the local AI-agent session and record repository changes.</p>
+          </li>
+          <li>
+            <span>02</span>
+            <h3>Check</h3>
+            <p>Evaluate declared verification, policy boundaries, and sensitive surfaces.</p>
+          </li>
+          <li>
+            <span>03</span>
+            <h3>Decide</h3>
+            <p>Tell the reviewer to begin, block for evidence, or request approval.</p>
+          </li>
+          <li>
+            <span>04</span>
+            <h3>Retain</h3>
+            <p>Archive the receipt and explicit gaps for later reconstruction.</p>
+          </li>
         </ol>
       </section>
 
-      <section class="section answer-section" id="answers" aria-labelledby="answers-title">
-        <p class="section-kicker">What A Receipt Answers</p>
-        <h2 id="answers-title">Before review, the packet should answer the obvious questions.</h2>
-        <div class="answer-grid">
+      <section class="rule" aria-labelledby="rule-title">
+        <p class="section-kicker">The operating rule</p>
+        <h2 id="rule-title">No valid Run Control Receipt.<br>No AI-agent PR review.</h2>
+        <p>
+          A failed receipt stops unready work before reviewer time is spent—not
+          after the change has already been treated as reviewable.
+        </p>
+      </section>
+
+      <section class="section roles" aria-labelledby="roles-title">
+        <div class="section-heading">
+          <p class="section-kicker">One receipt, clearer decisions</p>
+          <h2 id="roles-title">Useful to every owner of the review boundary.</h2>
+        </div>
+        <div class="role-grid">
           <article>
-            <h3>What changed?</h3>
-            <p>Observed files, session attribution, and baseline quality.</p>
+            <p class="role-number">01</p>
+            <h3>Engineering leaders</h3>
+            <p>Scale AI-assisted delivery without making agent activity invisible.</p>
           </article>
           <article>
-            <h3>What evidence exists?</h3>
-            <p>Declared verification, receipt status, policy context, and archive paths.</p>
+            <p class="role-number">02</p>
+            <h3>Security</h3>
+            <p>See sensitive changes, policy violations, and approval gaps before review.</p>
           </article>
           <article>
-            <h3>What blocks review?</h3>
-            <p>Failed checks, missing evidence, sensitive-surface approval gaps, or unclear attribution.</p>
+            <p class="role-number">03</p>
+            <h3>Platform engineering</h3>
+            <p>Use a local/BYOC, machine-readable gate inside buyer-owned workflows.</p>
           </article>
           <article>
-            <h3>What is not proven?</h3>
-            <p>No claim of code correctness, production safety, compliance, or ROI.</p>
+            <p class="role-number">04</p>
+            <h3>Reviewers</h3>
+            <p>Know whether to begin review without reconstructing raw agent chat.</p>
           </article>
         </div>
       </section>
 
-      <section class="section trust-section" id="trust" aria-labelledby="trust-title">
-        <p class="section-kicker">Local/BYOC Trust Boundary</p>
-        <h2 id="trust-title">Bring your own repo, policy, commands, and archive.</h2>
-        <p>
-          The current pilot shape is local and buyer-controlled. alienctl does not need a
-          hosted dashboard, stored credentials, third-party analytics, or provider mutation
-          to validate the workflow decision.
-        </p>
-      </section>
-
-      <section class="section pilot-section" id="pilot" aria-labelledby="pilot-title">
-        <p class="section-kicker">Two-Week One-Repo Pilot</p>
-        <h2 id="pilot-title">Test the rule on one real AI-agent workflow.</h2>
-        <p>
-          A design-partner pilot names one repo, one owner, the verification commands,
-          sensitive surfaces, local archive path, and the reviewer decision rule. The goal is
-          to learn whether the receipt gate changes review behavior or reconstructability.
-        </p>
-      </section>
-
-      <section class="section nonclaims" id="non-claims" aria-labelledby="nonclaims-title">
-        <p class="section-kicker">Non-Claims</p>
-        <h2 id="nonclaims-title">The receipt is evidence, not a magic approval stamp.</h2>
-        <ul>
-          <li>alienctl does not prove code correctness.</li>
-          <li>alienctl does not prove production safety.</li>
-          <li>alienctl does not claim compliance or legal assurance.</li>
-          <li>alienctl does not claim ROI or cost savings.</li>
-          <li>alienctl does not add hosted behavior, payment custody, SDKs, or product UI.</li>
-          <li>alienctl does not claim mature enterprise platform readiness.</li>
-        </ul>
-      </section>
-
-      <section class="cta-section" id="cta" aria-labelledby="cta-title">
-        <p class="section-kicker">Design-Partner Pilot</p>
-        <h2 id="cta-title">Want to test the gate before your next AI-agent PR review?</h2>
-        <div class="cta-row">
-          <a class="button primary" href="mailto:hello@alienctl.com">Run a one-repo pilot</a>
-          <a class="button secondary" href="mailto:hello@alienctl.com">Ask about alienctl</a>
+      <section class="section distinction" aria-labelledby="distinction-title">
+        <div class="section-heading">
+          <p class="section-kicker">A control object, not another signal</p>
+          <h2 id="distinction-title">CI asks whether checks passed. alienctl asks whether review should begin.</h2>
         </div>
+        <div class="distinction-grid">
+          <article>
+            <h3>Not an AI coding agent</h3>
+            <p>alienctl controls the workflow around agent work; it does not generate the code.</p>
+          </article>
+          <article>
+            <h3>Not CI or code review</h3>
+            <p>It records declared verification and readiness; it does not replace either system.</p>
+          </article>
+          <article>
+            <h3>Not merely logs</h3>
+            <p>It connects scope, observed changes, verification, approvals, and gaps to one decision.</p>
+          </article>
+          <article>
+            <h3>Not a correctness oracle</h3>
+            <p>It does not prove correctness, production safety, compliance, or ROI.</p>
+          </article>
+        </div>
+      </section>
+
+      <section class="section pilot" id="pilot" aria-labelledby="pilot-title">
+        <div class="pilot-intro">
+          <p class="section-kicker">Two-week design-partner pilot</p>
+          <h2 id="pilot-title">Test the rule on one real AI-agent workflow.</h2>
+          <p>
+            The pilot is for teams already using AI agents in a repository where
+            review ambiguity or sensitive changes matter.
+          </p>
+        </div>
+        <div class="pilot-card">
+          <h3>What we define together</h3>
+          <ul class="check-list">
+            <li>One repository, owner, and reviewer</li>
+            <li>Required verification commands</li>
+            <li>Sensitive surfaces and approval rules</li>
+            <li>A buyer-controlled evidence archive</li>
+            <li>A pass, expand, integrate, or stop decision</li>
+          </ul>
+          <p class="pilot-rule">For two weeks, failed receipts block review as ready.</p>
+        </div>
+      </section>
+
+      <section class="section faq" id="faq" aria-labelledby="faq-title">
+        <div class="section-heading">
+          <p class="section-kicker">Frequently asked questions</p>
+          <h2 id="faq-title">The short answers.</h2>
+        </div>
+        <div class="faq-list">
+          <details>
+            <summary>What is AI-agent change control?</summary>
+            <p>
+              It is a workflow for checking an agent’s authorized scope, observed
+              repository changes, declared verification, sensitive surfaces, and
+              evidence gaps before human code review begins.
+            </p>
+          </details>
+          <details>
+            <summary>What is a Run Control Receipt?</summary>
+            <p>
+              A reviewer-readable record of a bounded AI-agent run. It shows what
+              changed, what checks ran, which policy boundaries applied, what blocks
+              review, and what remains unproven.
+            </p>
+          </details>
+          <details>
+            <summary>Does alienctl replace CI or code review?</summary>
+            <p>
+              No. CI checks code and builds, while human reviewers judge the change.
+              alienctl provides a pre-review decision about whether the run has enough
+              evidence and approval to begin review.
+            </p>
+          </details>
+          <details>
+            <summary>Does alienctl send source code to a hosted service?</summary>
+            <p>
+              The current pilot is local and buyer-controlled. It does not require a
+              hosted dashboard, third-party analytics, or alienctl-managed credentials.
+            </p>
+          </details>
+          <details>
+            <summary>Can alienctl prove AI-generated code is correct?</summary>
+            <p>
+              No. alienctl records bounded-run evidence and explicit gaps. It does not
+              prove code correctness, production safety, compliance, or ROI.
+            </p>
+          </details>
+          <details>
+            <summary>Who is the pilot for?</summary>
+            <p>
+              CTO, CISO, platform, AppSec, developer-productivity, and engineering
+              teams already using AI agents in a repository with a real review or
+              security control problem.
+            </p>
+          </details>
+          <details>
+            <summary>What happens during the two-week pilot?</summary>
+            <p>
+              We define one repository, its required verification, sensitive surfaces,
+              owners, and archive. The team then requires a valid receipt before each
+              meaningful AI-agent change begins human review.
+            </p>
+          </details>
+        </div>
+      </section>
+
+      <section class="apply" id="apply" aria-labelledby="apply-title">
+        <p class="section-kicker">Design-partner application</p>
+        <h2 id="apply-title">Make your next AI-agent review decision explicit.</h2>
+        <p>
+          Tell us where AI-generated changes create review or security ambiguity.
+          We will reply personally to assess whether a one-repo pilot is a fit.
+        </p>
+        <a
+          class="button light"
+          href="mailto:hello@alienctl.com?subject=One-repo%20pilot%20application&amp;body=Company%3A%0ARole%3A%0AAI-agent%20workflow%3A%0ARepository%20type%3A%0AMain%20review%20or%20security%20problem%3A%0APreferred%20pilot%20timing%3A"
+        >Apply for a one-repo pilot</a>
+        <small>No mailing list. No automated sales sequence. A direct conversation.</small>
       </section>
     </main>
+
+    <footer class="site-footer">
+      <a class="brand footer-brand" href="#top">alienctl<span aria-hidden="true">/</span></a>
+      <p>AI-agent change control before code review.</p>
+      <a href="mailto:hello@alienctl.com">hello@alienctl.com</a>
+    </footer>
   </body>
 </html>

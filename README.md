@@ -36,7 +36,7 @@ integration.
 The primary call to action opens a structured email application:
 
 ```text
-mailto:joel.rietz.le@gmail.com
+mailto:hello@alienctl.com
 ```
 
 This records a qualified response in the buyer-controlled mailbox without

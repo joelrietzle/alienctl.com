@@ -3,10 +3,10 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>AI-Agent Change Control Before Code Review | alienctl</title>
+    <title>AI-Generated Code Review Gate and Evidence | alienctl</title>
     <meta
       name="description"
-      content="alienctl gives engineering teams a local, evidence-backed gate for AI-generated code before human review begins. Apply for a two-week, one-repo pilot."
+      content="Know whether an AI-generated software change is ready for human review. alienctl provides a local review gate, Run Control Receipt, and explicit evidence gaps."
     >
     <meta name="robots" content="index, follow, max-image-preview:large">
     <meta name="theme-color" content="#f3f2ed">
@@ -16,17 +16,17 @@
 
     <meta property="og:type" content="website">
     <meta property="og:site_name" content="alienctl">
-    <meta property="og:title" content="Control AI-generated code before review begins">
+    <meta property="og:title" content="Know when AI-generated code is ready to review">
     <meta
       property="og:description"
-      content="A local/BYOC gate that turns AI-agent repository sessions into evidence-backed review decisions."
+      content="The local pre-review control and evidence layer for AI-generated software changes."
     >
     <meta property="og:url" content="https://alienctl.com/">
     <meta name="twitter:card" content="summary">
-    <meta name="twitter:title" content="Control AI-generated code before review begins">
+    <meta name="twitter:title" content="Know when AI-generated code is ready to review">
     <meta
       name="twitter:description"
-      content="A local/BYOC gate that turns AI-agent repository sessions into evidence-backed review decisions."
+      content="The local pre-review control and evidence layer for AI-generated software changes."
     >
 
     <script type="application/ld+json">
@@ -47,7 +47,7 @@
             "applicationCategory": "DeveloperApplication",
             "operatingSystem": "Linux",
             "url": "https://alienctl.com/",
-            "description": "A local and bring-your-own-cloud change-control gate for AI-agent repository sessions before code review.",
+            "description": "A local and bring-your-own-cloud pre-review control and evidence gate for AI-generated software changes.",
             "provider": {
               "@id": "https://alienctl.com/#organization"
             }
@@ -119,11 +119,11 @@
     <main id="main">
       <section class="hero" id="top" aria-labelledby="hero-title">
         <div class="hero-copy">
-          <p class="eyebrow">AI-agent change control</p>
-          <h1 id="hero-title">Control AI-generated code before review begins.</h1>
+          <p class="eyebrow">Pre-review control for AI-generated code</p>
+          <h1 id="hero-title">Know when AI-generated code is ready to review.</h1>
           <p class="hero-lede">
-            alienctl observes an AI-agent repository session, checks its evidence
-            and policy boundaries, and tells reviewers whether review may begin.
+            alienctl turns an observed AI coding session into a clear decision:
+            begin review, block for missing evidence, or request human approval.
           </p>
           <div class="cta-row">
             <a class="button primary" href="#apply">Apply for a one-repo pilot</a>
@@ -167,12 +167,12 @@
       <section class="definition" aria-labelledby="definition-title">
         <p class="section-kicker">What is alienctl?</p>
         <h2 id="definition-title">
-          A pre-review control gate for engineering teams using AI agents.
+          The pre-review control and evidence layer for AI-generated software changes.
         </h2>
         <p>
-          alienctl turns an observed AI-agent repository session into a clear
-          workflow decision: begin review, block for missing evidence, or request
-          human approval. The output is a local, reviewer-readable Run Control Receipt.
+          Runtime guardrails control what an agent may do. Enterprise governance
+          platforms oversee AI risk. alienctl answers the engineering question
+          between them: is this resulting change ready for human review?
         </p>
       </section>
 
@@ -265,27 +265,30 @@
 
       <section class="section distinction" aria-labelledby="distinction-title">
         <div class="section-heading">
-          <p class="section-kicker">A control object, not another signal</p>
-          <h2 id="distinction-title">CI asks whether checks passed. alienctl asks whether review should begin.</h2>
+          <p class="section-kicker">The missing engineering layer</p>
+          <h2 id="distinction-title">Runtime control, review control, and enterprise governance solve different problems.</h2>
         </div>
-        <div class="distinction-grid">
+        <div class="layer-grid">
           <article>
-            <h3>Not an AI coding agent</h3>
-            <p>alienctl controls the workflow around agent work; it does not generate the code.</p>
+            <p class="role-number">01</p>
+            <h3>Runtime guardrails</h3>
+            <p>Decide whether an agent action or tool call may execute.</p>
           </article>
           <article>
-            <h3>Not CI or code review</h3>
-            <p>It records declared verification and readiness; it does not replace either system.</p>
+            <p class="role-number">02</p>
+            <h3>alienctl review control</h3>
+            <p>Decide whether the resulting software change has enough evidence and approval to begin review.</p>
           </article>
           <article>
-            <h3>Not merely logs</h3>
-            <p>It connects scope, observed changes, verification, approvals, and gaps to one decision.</p>
-          </article>
-          <article>
-            <h3>Not a correctness oracle</h3>
-            <p>It does not prove correctness, production safety, compliance, or ROI.</p>
+            <p class="role-number">03</p>
+            <h3>Enterprise governance</h3>
+            <p>Oversee AI assets, organizational risk, controls, compliance, and business outcomes.</p>
           </article>
         </div>
+        <p class="boundary-note">
+          alienctl complements these layers. It does not replace runtime policy,
+          CI, code review, or enterprise GRC—and it does not prove code correctness.
+        </p>
       </section>
 
       <section class="section pilot" id="pilot" aria-labelledby="pilot-title">
